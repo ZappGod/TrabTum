@@ -1,0 +1,45 @@
+body{
+    width: auto;
+    padding: 0px;
+}
+h1,h2{
+    display: flex;
+    justify-content: center;
+}
+.cadastros{
+    display: inline-block;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    width: 30%;
+    border: 1px solid rgb(201, 201, 201);
+}
+label{
+    font-weight: bold;
+    display: inline-block;
+    width: 5%;
+}
+.botao{
+    background-color: rgb(122, 122, 122);
+    color: black;
+    text-align: center;
+    padding: 10px 30px;
+    margin: 2px;
+    border: none;
+    border-radius: 5px;
+}
+.botao:hover{
+    background-color: blue;
+}
+li{
+    background-color: #838383;
+    display: inline-block;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+li:hover{
+    background-image: linear-gradient(to top, #000,#2600fd);
+    color: #838383;
+}

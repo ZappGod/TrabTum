@@ -1,0 +1,24 @@
+{% extends "perry.html" %}
+
+{% block titulo %} Home {% endblock %}
+{% block link %}
+<link rel="stylesheet" href="../static/css/style.css">
+{% endblock %}
+{% block body %}
+    <h1>Home</h1>
+    {% block formulario %}
+    <form method="POST">
+        {{ form.csrf_token }}
+
+        {{ form.email.label() }}
+        {{ form.email(class="cadastros") }}
+        <br>
+        {{ form.password.label() }}
+        {{ form.password(class="cadastros") }}
+        {{ form.btn(class="botao") }}
+    </form>
+    <a href=" {{ url_for('createAccount') }} "><li>Criar Conta</li></a>
+    {% endblock %}
+
+
+{% endblock %}

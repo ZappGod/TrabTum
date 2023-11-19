@@ -1,0 +1,38 @@
+{% extends "perry.html" %}
+
+{% block titulo %}  Perfil do {{ user.username }} {% endblock %}
+{% block link %}
+<link rel="stylesheet" href="../static/css/style.css">
+{% endblock %}
+{% block body %}
+
+    <h1> Faaala {{ user.username }}!  -  {{ mesa }} </h1>
+    <a href=" {{ url_for('homepage') }} " style="display: flex; justify-content: center;"><li>Home</li></a>
+
+
+    {% if form %}
+        <h2> MEU PERFIL </h2>
+
+        <form method="POST" enctype="multipart/form-data" style="display: flex; justify-content: center;">
+            {{ form.csrf_token }}
+
+            {{ form.text.label() }}
+            {{ form.text() }}
+
+            {{ form.photo.label() }}
+            {{ form.photo() }}
+
+            {{ form.btn(class="botao") }}
+        </form>
+
+    {% endif %}
+    {% for post in user.posts %}
+    <div style="display: flex; justify-content: center;">
+        <!-- <img src="{{ url_for('static', filename='fotos_dos_posts/default.jpg') }}"> -->
+        <p>{{post.post_text}}</p>
+        <img class="img-thumbnail rounded" src="{{ url_for('static', filename='fotos_dos_posts/{}'.format(post.post_img)) }}">
+    </div>
+    {% endfor %}
+
+
+{% endblock %}

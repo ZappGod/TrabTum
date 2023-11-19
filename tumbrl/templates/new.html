@@ -1,0 +1,25 @@
+{% extends "perry.html" %}
+{% block link %}
+<link rel="stylesheet" href="../static/css/style.css">
+{% endblock %}
+{% block body %}
+<form method="POST">
+    <h1>Crie sua conta</h1>
+    {{ form.csrf_token }}
+
+    {{ form.email.label() }}
+    {{ form.email(class="cadastros") }}
+    <br>
+    {{ form.usarname.label() }}
+    {{ form.usarname(class="cadastros") }}
+    <br>
+    {{ form.password.label() }}
+    {{ form.password(class="cadastros") }}
+    <br>
+    {{ form.checkPassword.label() }}
+    {{ form.checkPassword(class="cadastros") }}
+    <br>
+    {{ form.btn(class="botao") }}
+    <a href=" {{ url_for('homepage') }} "><li>Home</li></a>
+</form>
+{% endblock %}
